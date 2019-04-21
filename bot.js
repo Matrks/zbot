@@ -53,10 +53,10 @@ client.on("message", message => {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
-  message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
+  message.guild.members.filter(m => m.presence.status !== 'online').forEach(m => {
   m.send(`${argresult}\n ${m}`);
   })
-  message.channel.send(`\`${message.guild.members.filter( m => m.presence.status !== 'all').size}\`:mailbox:  عدد المستلمين `);
+  message.channel.send(`\`${message.guild.members.filter( m => m.presence.status !== 'online').size}\`:mailbox:  عدد المستلمين `);
   message.delete();
   };
   });
