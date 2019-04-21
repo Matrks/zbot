@@ -6,8 +6,9 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
 
+
 client.on("message", message => {
-    if (message.content.startsWith("$obc")) {
+    if (message.content.startsWith(prefix + "bc")) {
                  if (!message.member.hasPermission("ADMINISTRATOR"))  return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
@@ -22,12 +23,9 @@ client.on("message", message => {
 
 //bc online
 
-
-  var prefix = "$";
-
   client.on("message", message => {
   
-              if (message.content.startsWith(prefix + "bc")) {
+              if (message.content.startsWith(prefix + "obc")) {
                            if (!message.member.hasPermission("ADMINISTRATOR"))  return;
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(' '); 
@@ -38,12 +36,4 @@ client.on("message", message => {
    message.delete(); 
   };     
   });
-
-client.on('message', message => {
-    var  user = message.mentions.users.first() || message.author;
-if (message.content.startsWith("$avatar")) {
-message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
-}
-});
-
 client.login(process.env.BOT_TOKEN);
