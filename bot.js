@@ -38,8 +38,7 @@ client.on('message', message => {
   .setColor("RANDOM")
   .setTimestamp()
   .addField("**Bannd From The Server !**",  '**[ ' + `${user.tag}` + ' ]**')
-  message.channel.send({
-    embed : banembed
+    message.channel.send({
   })
 }
 });
